@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React, { useCallback, useMemo, useState } from "react";
 import './App.css';
-
+import Child from './Child';
 function App() {
+  const [count, setCount] = useState(0);
+  const increaseCount = useCallback(() => {
+    setCount(prevCount => prevCount + 1);
+  }, [setCount]);
+
+  const result = useMemo(() => {
+    var i = 0;
+    console.time("reult");
+    while (i < 1000000) {
+      i++;
+    }
+    console.timeEnd("result");
+    return i;
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Performace optimisation in react {count} and Reuslt is :{result}</h1>
+      <Child increaseCount={increaseCount} />
     </div>
   );
 }
