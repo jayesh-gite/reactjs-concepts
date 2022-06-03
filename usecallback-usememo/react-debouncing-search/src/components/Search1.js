@@ -20,25 +20,37 @@ const Search1 = () => {
             .then((json) => setSuggestions(json.data.items))
     }
     const optimizedFunction = useCallback(debounce(handleChange), [handleChange]);
+
+    const style = {
+        display: 'inline - block',
+        width: '31%',
+        height: '500px',
+        padding: '5px',
+        border: '1px solid #97a3a5',
+        backgroundColor: '#e8f6f6',
+        float: 'right'
+    }
     return (
-        <div>
-            Search method 1
-            <h2 style={{ textAlign: "center" }}>Debouncing in React</h2>
+        <div style={style}>
+            <h4 style={{ textAlign: "center" }
+            }> Debouncing with Own Implementation</h4>
             <input
                 type="text"
-                className="searhc"
+                className="search"
                 placeholder="Enter search items here..."
                 onChange={(e) => optimizedFunction(e.target.value)}
             />
-            {suggestions.length > 0 && (
-                <div className="autocomplete">{
-                    suggestions.map((el, i) => (
-                        <div key={i} className="autocomplete">{el.name}</div>
-                    ))
-                }</div>
-            )}
+            {
+                suggestions.length > 0 && (
+                    <div className="autocomplete">{
+                        suggestions.map((el, i) => (
+                            <div key={i} className="autocomplete">{el.name}</div>
+                        ))
+                    }</div>
+                )
+            }
 
-        </div>
+        </div >
     );
 }
 
