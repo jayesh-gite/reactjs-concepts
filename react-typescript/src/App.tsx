@@ -10,7 +10,13 @@ import Oscar from './components/Oscar';
 import Button from './components/events/Button';
 import Input from './components/events/Input';
 import Container from './components/styles/Container';
-
+import Login from './components/hooks/Login';
+import CounterWithUserReducer from './components/hooks/CounterWithUserReducer';
+import { ThemeContextProvider } from './components/context/ThemeContext';
+import Box from './components/context/Box';
+import { UserContextProvider } from './components/context/UserContext';
+import { User as UserC } from './components/context/User';
+import { MutableRef } from './components/ref/MutableRef';
 function App() {
   const personName = {
     first: 'Bruce',
@@ -60,6 +66,16 @@ function App() {
       <Button handleClick={(e, id) => console.log(e, id)} />
       <Input value='' handleChange={(e) => console.log(e)} />
       <Container styles={{ border: '1px solid black', padding: '1rem' }} />
+      {/* Hooks*/}
+      <Login />
+      <CounterWithUserReducer />
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
+      <UserContextProvider>
+        <UserC />
+      </UserContextProvider>
+      <MutableRef />
     </div>
   );
 }
