@@ -46,7 +46,7 @@ function App() {
   ];
   return (
     <div className="App">
-      {/*
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -68,8 +68,6 @@ function App() {
       <Status status='error' />
       <Heading>This is Heading PlaceHolder</Heading>
       <Oscar><Heading>Oscar gose to Leonardo Dicpario!</Heading></Oscar>
-
-  */}
       {/* Event handler*/}
       <Button handleClick={(e, id) => console.log(e, id)} />
       <Input value='' handleChange={(e) => console.log(e)} />
