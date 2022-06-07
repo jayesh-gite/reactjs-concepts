@@ -21,6 +21,7 @@ import { CounterClass } from './components/class/CounterClass';
 import { Private } from './components/auth/private';
 import { Profile } from './components/auth/Profile';
 import { ListGenetic } from './components/generics/ListGeneric';
+import { Toast } from './components/templateliterals/Toast';
 function App() {
   const personName = {
     first: 'Bruce',
@@ -88,6 +89,7 @@ function App() {
       <ListGenetic items={['Batman', 'Superman', 'Wonder Women']} onClick={(value) => console.log(value)} />
       <ListGenetic items={[1, 2, 3, 4]} onClick={(value) => console.log(value)} />
       {/*<ListGenetic items={nameList} onClick={(value) => console.log(value)} /> */}
+      <Toast position='center-bottom' />
     </div>
 
   );
