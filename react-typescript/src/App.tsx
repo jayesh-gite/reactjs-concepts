@@ -24,6 +24,7 @@ import { ListGenetic } from './components/generics/ListGeneric';
 import { Toast } from './components/templateliterals/Toast';
 import { CustomButton } from './components/html/CustomButton';
 import { CustomComponent } from './components/html/CustomeComponent'
+import { PolyMorphicComponent } from './components/PolymorphicComponents/PolyMorphicComponent';
 function App() {
   const personName = {
     first: 'Bruce',
@@ -94,6 +95,7 @@ function App() {
       <Toast position='center-bottom' />
       <CustomButton varient='primary' onClick={() => console.log('clicked..')}>Primary Button</CustomButton>
       <CustomComponent isLoggedIn={true} messageCount={10} name="Soham" key={"00x0x"} />
+      <PolyMorphicComponent />
     </div>
 
   );
