@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Greet from './components/Greet';
-import Person from './components/Person';
-import PersonList from './components/PersonList';
-import Status from './components/Status';
-import Heading from './components/Heading';
-import Oscar from './components/Oscar';
+import Greet from './components/typescriptwithprops/Greet';
+import Person from './components/typescriptwithprops/Person';
+import PersonList from './components/typescriptwithprops/PersonList';
+import Status from './components/typescriptwithprops/Status';
+import Heading from './components/typescriptwithprops/Heading';
+import Oscar from './components/typescriptwithprops/Oscar';
 import Button from './components/events/Button';
 import Input from './components/events/Input';
 import Container from './components/styles/Container';
@@ -17,6 +17,9 @@ import Box from './components/context/Box';
 import { UserContextProvider } from './components/context/UserContext';
 import { User as UserC } from './components/context/User';
 import { MutableRef } from './components/ref/MutableRef';
+import { CounterClass } from './components/class/CounterClass';
+import { Private } from './components/auth/private';
+import { Profile } from './components/auth/Profile';
 function App() {
   const personName = {
     first: 'Bruce',
@@ -76,7 +79,13 @@ function App() {
         <UserC />
       </UserContextProvider>
       <MutableRef />
+      {/* Class based implementaion */}
+      <CounterClass message='The count value is' />
+      {/* complex props*/}
+
+      <Private isLoggedIn={true} component={Profile} />
     </div>
+
   );
 }
 
