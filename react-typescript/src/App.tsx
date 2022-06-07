@@ -22,6 +22,8 @@ import { Private } from './components/auth/private';
 import { Profile } from './components/auth/Profile';
 import { ListGenetic } from './components/generics/ListGeneric';
 import { Toast } from './components/templateliterals/Toast';
+import { CustomButton } from './components/html/CustomButton';
+import { CustomComponent } from './components/html/CustomeComponent'
 function App() {
   const personName = {
     first: 'Bruce',
@@ -90,6 +92,8 @@ function App() {
       <ListGenetic items={[1, 2, 3, 4]} onClick={(value) => console.log(value)} />
       {/*<ListGenetic items={nameList} onClick={(value) => console.log(value)} /> */}
       <Toast position='center-bottom' />
+      <CustomButton varient='primary' onClick={() => console.log('clicked..')}>Primary Button</CustomButton>
+      <CustomComponent isLoggedIn={true} messageCount={10} name="Soham" key={"00x0x"} />
     </div>
 
   );
